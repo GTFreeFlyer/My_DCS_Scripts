@@ -28,3 +28,6 @@ This script grabs the UCID of players when they change slots or when they kill a
 This will check aircraft in your mission for whether or not they are carrying ordnance.  
 If so, their aircraft will explode after climbing to a certain altitude.  
 This is used to enforce fair play in civilian-style multiplayer missions.
+
+## GT_Laser_Script:
+Creates a laser from any object to another object, stationary or moving. 
