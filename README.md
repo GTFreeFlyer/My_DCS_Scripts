@@ -1,8 +1,8 @@
 # WELCOME!
-Here is my collection of scripts I have written for DCS World.
-It is always ethical practice to give credit to the author in your mission briefings and server descriptions.
-Please feel free to submit issues, suggestions, or pull requests through github.
-If you need assistance, you may reach me on Discord or ED Forums, username GTFreeFlyer.
+Here is my collection of scripts I have written for DCS World.  
+It is always ethical practice to give credit to the author in your mission briefings and server descriptions.  
+Please feel free to submit issues, suggestions, or pull requests through github.  
+If you need assistance, you may reach me on Discord or ED Forums, username GTFreeFlyer.  
 Please enjoy!
 
 ### GTFreeFlyerTutorials:
