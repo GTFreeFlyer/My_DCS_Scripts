@@ -8,7 +8,7 @@ Please enjoy!
 ### GTFreeFlyerTutorials:
 These are not scripts to load, but scripts to read through.  I created these for people just getting into DCS lua scripting without any prior knowledge of programming.
 
-### ExplodeWeakAircraft:
+### ExplodeWeakUnits:
 Causes weak enemy units to explode once reaching a certain health threshold.  
 You have control over which unit types, or entire categories, this will apply to.  
 Each unit can have their own individual settings.  
