@@ -1,4 +1,4 @@
--- ExplodeWeakAircraft_v5.lua 8/1/2025
+-- ExplodeWeakAircraft_v6.lua 8/3/2025
 -- By, GTFreeFlyer.  You may reach out to me on Discord or ED Forums, same username, for support, questions, or suggestions.
 -- Assisted by Foxtrot and LoVis with Virtual Carrier Task Force 58
 -- DCS World script: Causes weak enemy units to explode once reaching a certain health threshold.
