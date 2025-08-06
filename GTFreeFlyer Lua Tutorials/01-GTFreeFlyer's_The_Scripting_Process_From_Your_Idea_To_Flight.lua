@@ -27,7 +27,7 @@
 --5.  Once you are looking at the map, click the airplane icon on the left of the screen, "Add or modifiy airplane group"
 --6.  Click anywhere on the map to place your aircraft.
 --7.  You now have that plane's data popped up on the right of your screen.
---8.  Leave everything as default.  Name should be "New Airplane Group", Pilot should be "Pilot #001", etc.  DO NOT CHANGE.
+--8.  Leave everything as default. Group Name should be "New Airplane Group", Pilot should be "Aerial 1-1", etc.  DO NOT CHANGE.
 --9.  However we must change some things.  Under "Type", choose an aircraft module that you do have.
 --10. Set "Skill" to "Player"
 --11. In the next section below, choose an altitude that will keep you clear of terrain.
@@ -64,9 +64,9 @@ function endTutorial()
         trigger.action.outText("This tutorial will self-destruct in " .. mytimer, 1, true)    
         timer.scheduleFunction(endTutorial, nil, timer.getTime() + 1)
     else        
-        _name = Unit.getByName("Pilot #001") -- _name return is a class, not a string
+        _name = Unit.getByName("Aerial 1-1") -- _name return is a class, not a string
         trigger.action.explosion(_name:getPosition().p, 1000) 
-        trigger.action.outTextForGroup(_aircraftDetails.groupID, "Tutorial finished.  See you next time!", 60, true)
+        trigger.action.outTextForGroup(_name.getGroup():getID(), "Tutorial finished.  See you next time!", 60, true)
     end
 end
 missionCommands.addCommand("End Tutorial", nil, endTutorial, nil)
