@@ -24,7 +24,9 @@ If you'd like to have the fog change randomly every 5 minutes, there are instruc
 Creates a laser from any object to another object, stationary or moving. 
 
 ### GTFreeFlyersUCIDGrabber:
-This script grabs the UCID of players when they change slots or when they kill another player and logs it.
+This script grabs the UCID of players when they change slots or when they kill another player and logs it.  
+Useful if you need to ban someone from your server.  
+So, even if they change their MP session name, the ban would still be in effect.  
 
 ### Nuke by GTFreeflyer:
 This will create an explosion at a specific coordinate.  You can tune the size of the explosion.  
