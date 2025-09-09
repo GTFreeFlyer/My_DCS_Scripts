@@ -19,6 +19,7 @@ Example usage 2:  The Anton seems like it takes way too much damage compared to 
 ### GTFF_Aircraft_Diagnostics:  
 Use this for quick aircraft perfromance testing.  
 It will display some text in the top of your screen with additional info such as fuel consumption, ground speed, etc.  
+Discussion, and a .miz file can be found here: https://forum.dcs.world/topic/378058-engine-diagnostics-script/#comment-5690603
 
 ### GTFreeFlyersUCIDGrabber:  
 This script grabs the UCID of players when they change slots or when they kill another player and logs it.  
