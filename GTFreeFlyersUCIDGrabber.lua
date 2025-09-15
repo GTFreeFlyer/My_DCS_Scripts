@@ -1,5 +1,6 @@
 --Creatred by GTFreeFlyer
 --This script grabs the UCID of players when they change slots or when they kill another player and logs it.
+--Place this script in the ...Saved Games\DCS\Scripts\Hooks\ folder on the server.
 
 local UCID_Grabber = {}
 
@@ -23,4 +24,5 @@ function UCID_Grabber.onGameEvent(eventName, arg1, arg2, arg3, arg4, arg5, arg6,
 end
 
 DCS.setUserCallbacks(UCID_Grabber)
+
 net.log("Loaded UCID grabber by GTFreeFlyer")
