@@ -28,7 +28,7 @@
 
 --More instructions:
 --Add desired unit types below. 
---unitTypeName must match the DCS type names exactly. Some are prepopulated below, but to get others, turn on debugMode below, run the mission, and check the dcs.log file for unit type names detected. Case sensitive!
+--unitTypeName must match the DCS type names exactly. Lots are already prepopulated below, but to get others, turn on debugMode below, run the mission, and check the dcs.log file for unit type names detected. Case sensitive!
 --You can do this for any unit in game (airplane, helicopter, ship, and/or ground unit.  Please note that all ships are categorized as ground units in DCS).
 --Whichever unit types you want to emit, just place a "-- before the line to comment it out of the script.  Don't delete the line so that way you can build a list of all the units eventually.
 
@@ -37,29 +37,65 @@
 --launchFlares is for visual effect simulating sparks or secondaries from the explosion.  Set to true if you want to see flares launched at the unit's location when it explodes.
 --explosionsContinueUntilDestroyed will determine if explosions and flares continue every one second until the unit is gone (aircraft hits ground, or ship sinks, etc.).  If false, you'll see just one explosion.
 
-local debugMode = false -- Set to true if you want to see debug messages in the DCS log file.  Set to false to disable debug messages.  This is how you can find the correct unit names for below.
+local debugMode = true -- Set to true if you want to see debug messages in the DCS log file.  Set to false to disable debug messages.  This is how you can find the correct unit names for below.
+
+--comments at the end of each line are the names exactly as they appear in the mission editor, shown in the "Type" drop-down.
 
 local unitTypesToExplode = {
     --WARBIRDS
-    --{unitTypeName = "B-17G",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    {unitTypeName = "Bf-109k-4",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    --{unitTypeName = "F4U-1D",           healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    {unitTypeName = "FW-190A8",           healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    {unitTypeName = "FW-190D9",           healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Fw 190 D-9
-    {unitTypeName = "I-16",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
-    {unitTypeName = "MiG-19P",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --MiG-19P
-    {unitTypeName = "MiG-21Bis",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --MiG-21Bis    
-    --{unitTypeName = "SpitfireLFMkIXCW", healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
-    {unitTypeName = "Tu-22M3",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "B-17G",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    {unitTypeName = "Bf-109k-4",           healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Bf 109 K-4
+    --{unitTypeName = "Christen Eagle II", healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "F4U-1D",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F4U-1D_CW",         healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    {unitTypeName = "FW-190A8",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Fw 190 A-8
+    {unitTypeName = "FW-190D9",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Fw 190 D-9
+    {unitTypeName = "I-16",                healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --I-16
+    {unitTypeName = "La-7",                healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "MosquitoFBMkVI",    healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "P-47D-30",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --P-47D-30    
+    --{unitTypeName = "P-47D-30bl1",       healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "P-47D-40",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --P-47D-40
+    --{unitTypeName = "P-51D",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "P-51D-30-NA",       healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "SpitfireLFMkIX",    healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "SpitfireLFMkIXCW",  healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Spitfire LF Mk. IX
+    --{unitTypeName = "TF-51F",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "Yak-52",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
 
     --JETS
-    --{unitTypeName = "E-3A",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    --{unitTypeName = "FA-18C_hornet",    healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    --{unitTypeName = "KC135MPRS",        healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "A-10C",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "A-10C_2",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "AJS37",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "AV8BNA",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "C-101CC",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "C-101EB",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},      
+    --{unitTypeName = "E-3A",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "E-3A",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-14A-135-GR",       healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "F-14A-135-GR-Early", healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-14B",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-15C",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-15E",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-15ESE",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-16C_50",           healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "FA-18C_hornet",      healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-5E-3",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},  
+    --{unitTypeName = "KC135MPRS",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "L-39ZA",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "M-2000C",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "MB-339A",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "MB-339APAN",         healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "MiG-15bis",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "MiG-19P",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "MiG-21Bis",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "MiG-29 Fulcrum",     healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "Mirage 2000-5",      healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    {unitTypeName = "Tu-22M3",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
 
     --HELICOPTERS
-    --{unitTypeName = "CH-47D",    healthTrigger = 0.2, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = true}, 
-    --{unitTypeName = "Ka-27",       healthTrigger = 0.2, explosionPower = 100, launchFlares = true, explosionsContinueUntilDestroyed = true}, 
+    --{unitTypeName = "CH-47D",             healthTrigger = 0.2, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = true}, 
+    --{unitTypeName = "Ka-27",              healthTrigger = 0.2, explosionPower = 100, launchFlares = true, explosionsContinueUntilDestroyed = true}, 
 
     --GROUND UNITS
     --{unitTypeName = "2B11 mortar",              healthTrigger = 0.1, explosionPower = 10, launchFlares = true, explosionsContinueUntilDestroyed = true}, 
@@ -116,6 +152,7 @@ local unitTypesToExplode = {
     --{unitTypeName = "Ural-375 ZU-23 Insurgent", healthTrigger = 0.1, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = true}, --AAA ZU-23 on Ural-4320 Insurgent
     --{unitTypeName = "Ural-4320-31",             healthTrigger = 0.1, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = true}, --Truck Ural-4320-31 Arm'd
     --{unitTypeName = "Ural-4320T",               healthTrigger = 0.1, explosionPower = 10, launchFlares = true, explosionsContinueUntilDestroyed = true}, --Truck Ural-4320T
+    --{unitTypeName = "Willys_MB",                healthTrigger = 0.1, explosionPower = 10, launchFlares = true, explosionsContinueUntilDestroyed = true}, --Car Willys Jeep
     --{unitTypeName = "ZiL-131 APA-80",           healthTrigger = 0.1, explosionPower = 10, launchFlares = true, explosionsContinueUntilDestroyed = true}, --GPU APA-80 on ZIL-131
     --{unitTypeName = "ZIL-135",                  healthTrigger = 0.1, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = true}, --Truck ZIL-135
     --{unitTypeName = "ZU-23 Closed Insurgent",   healthTrigger = 0.1, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = true}, --AAA ZU-23 Insurgent Closed Emplacement
