@@ -21,7 +21,7 @@ Use this for quick aircraft perfromance testing.
 It will display some text in the top of your screen with additional info such as fuel consumption, ground speed, etc.  
 Discussion, and a .miz file can be found here: https://forum.dcs.world/topic/378058-engine-diagnostics-script/#comment-5690603
 
-###GTFreeFlyer's Carrier Map Position Plotter.lua  
+### GTFreeFlyer's Carrier Map Position Plotter:
 Loads at mission start, finds all carriers, and then puts markers on the F10 map of where the carriers are expected  
 to be every X hours, based on their current speed and course.  Does not work for carriers that turn mid-mission.  
 Markers are only visible to the same coalition as the carriers.  
