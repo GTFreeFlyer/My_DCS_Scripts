@@ -91,7 +91,7 @@ local unitTypesToExplode = {
     --{unitTypeName = "FA-18F",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
     --{unitTypeName = "FA-18ET",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
     --{unitTypeName = "FA-18E",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
-    --{unitTypeName = "FA-18G",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
+    --{unitTypeName = "EA-18G",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
     --{unitTypeName = "F-5E-3",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},  
     --{unitTypeName = "KC135MPRS",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
     --{unitTypeName = "L-39ZA",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
