@@ -1,4 +1,4 @@
--- ExplodeWeakAircraft_v8.1.lua 11/12/2025
+-- ExplodeWeakAircraft_v8.2.lua 05/13/2026
 -- By, GTFreeFlyer.  You may reach out to me on Discord or ED Forums, same username, for support, questions, or suggestions.
 -- Assisted by Foxtrot and LoVis with Virtual Carrier Task Force 58
 -- DCS World script: Causes weak enemy units to explode once reaching a certain health threshold.
@@ -15,6 +15,8 @@
 --  Added ship category back in after testing and realizing that the enumerations on Hoggit were wrong (swapped with ground units).  Fixed
 --v8.1 Nov. 12, 2025.
 --  No changes to script or function.  Only added more units to the prepopulated lists in the USER SETTINGS section, and placed them in alphabetical order.
+--v8.2 May 13, 2026.
+--  No changes to script or function.  Only added more units to the prepopulated lists in the USER SETTINGS section.
 
 --Instructions:
 -- 1. Update the USER SETTINGS below per your liking.
@@ -85,6 +87,11 @@ local unitTypesToExplode = {
     --{unitTypeName = "F/A-18A",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --AI airplane
     --{unitTypeName = "F/A-18C",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --AI airplane
     --{unitTypeName = "FA-18C_hornet",      healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --F/A-18C Lot 20
+    --{unitTypeName = "FA-18FT",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
+    --{unitTypeName = "FA-18F",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
+    --{unitTypeName = "FA-18ET",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
+    --{unitTypeName = "FA-18E",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
+    --{unitTypeName = "FA-18G",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --Chiller Juice mod
     --{unitTypeName = "F-5E-3",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},  
     --{unitTypeName = "KC135MPRS",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
     --{unitTypeName = "L-39ZA",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
