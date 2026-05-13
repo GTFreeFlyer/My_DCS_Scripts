@@ -37,7 +37,7 @@
 --launchFlares is for visual effect simulating sparks or secondaries from the explosion.  Set to true if you want to see flares launched at the unit's location when it explodes.
 --explosionsContinueUntilDestroyed will determine if explosions and flares continue every one second until the unit is gone (aircraft hits ground, or ship sinks, etc.).  If false, you'll see just one explosion.
 
-local debugMode = true -- Set to true if you want to see debug messages in the DCS log file.  Set to false to disable debug messages.  This is how you can find the correct unit names for below.
+local debugMode = false -- Set to true if you want to see debug messages in the DCS log file.  Set to false to disable debug messages.  This is how you can find the correct unit names for below.
 
 --comments at the end of each line are the names exactly as they appear in the mission editor, shown in the "Type" drop-down.
 
@@ -66,12 +66,15 @@ local unitTypesToExplode = {
     --JETS
     --{unitTypeName = "A-10C",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "A-10C_2",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
+    --{unitTypeName = "A-4E-C",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "A6E",                healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "AJS37",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "AV8BNA",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "C-101CC",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "C-101EB",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},      
+    --{unitTypeName = "E-2C",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "E-3A",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    --{unitTypeName = "E-3A",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F-4E-45MC",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "F-14A-135-GR",       healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
     --{unitTypeName = "F-14A-135-GR-Early", healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "F-14B",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
@@ -79,7 +82,9 @@ local unitTypesToExplode = {
     --{unitTypeName = "F-15E",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "F-15ESE",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "F-16C_50",           healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
-    --{unitTypeName = "FA-18C_hornet",      healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F/A-18A",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "F/A-18C",            healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "FA-18C_hornet",      healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --old?
     --{unitTypeName = "F-5E-3",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},  
     --{unitTypeName = "KC135MPRS",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
     --{unitTypeName = "L-39ZA",             healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false},
@@ -91,6 +96,9 @@ local unitTypesToExplode = {
     --{unitTypeName = "MiG-21Bis",          healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "MiG-29 Fulcrum",     healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
     --{unitTypeName = "Mirage 2000-5",      healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "S-3B",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "S-3B Tanker",        healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
+    --{unitTypeName = "T-45",               healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, --T-45C
     {unitTypeName = "Tu-22M3",              healthTrigger = 0.5, explosionPower = 50, launchFlares = true, explosionsContinueUntilDestroyed = false}, 
 
     --HELICOPTERS
